@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let playerSequence = [];
     let level = 1;
     let isPlaying = false;
-    const WIN_LEVEL = 2; 
+    const WIN_LEVEL = 8; 
     
     // Add click event to each clover
     Object.keys(clovers).forEach(color => {

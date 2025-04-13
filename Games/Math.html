@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Challenge</title>
+    <link rel="stylesheet" href="../Style/stylemath.css">
+</head>
+<body>
+    <header>
+        <h1>Math Challenge</h1>
+    </header>
+    
+    <div class="container">
+        <div class="game-description">
+            <h2>Complete Math Challenge!</h2>
+            <p>Answer 15 math questions to earn your Math badge! You need to score at least 70% to succeed.</p>
+            <p>You'll face:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Addition problems</li>
+                <li>Subtraction problems</li>
+                <li>Multiplication problems</li>
+            </ul>
+        </div>
+        
+        <div class="game-area">
+            <div id="start-screen">
+                <h3>Ready to test your math skills?</h3>
+                <button id="start-button" class="start-button">Start Challenge</button>
+            </div>
+            
+            <div id="game-screen" style="display: none;">
+                <div class="progress-container" id="progress-container">
+                    <!-- Progress indicators will be added here -->
+                </div>
+                
+                <div class="question-container">
+                    <span id="question-text">Question goes here</span>
+                </div>
+                
+                <input type="number" id="answer-input" class="answer-input" placeholder="Your answer">
+                
+                <div class="feedback" id="feedback"></div>
+                
+                <button id="submit-answer" class="submit-answer">Submit Answer</button>
+                <button id="skip-button" class="skip-button">Skip Question</button>
+            </div>
+            
+            <div id="result-screen" class="result-container">
+                <div class="result-message" id="result-message">Challenge Complete!</div>
+                <div class="result-score">
+                    Score: <span id="score-value">0</span>%
+                </div>
+                <button id="retry-button" class="retry-button">Try Again</button>
+            </div>
+        </div>
+        
+        <a href="../index.html" class="home-link">Return to Home</a>
+    </div>
+
+    <!-- Message overlay -->
+    <div class="message-overlay win-message" id="winMessage">
+        <div class="message-content">
+            <h2>🧮 Congratulations! 🧮</h2>
+            <p>You've mastered the Math Challenge! You have unlocked the Math Master badge!</p>
+            <button id="playAgain">Done</button>
+        </div>
+    </div>
+    
+    <!-- Badge Award Overlay -->
+    <div class="badge-award-overlay" id="badgeAwardOverlay">
+        <div class="badge-award-container">
+            <div class="badge-icon-large">
+                <img src="../Images/Bagdes/Math Badge.png" alt="Math Master Badge">
+            </div>
+            <div class="badge-title">Math Master</div>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </div>
+    </div>
+    
+    <script src="../Script/scriptmath.js"></script>
+</body>
+</html>

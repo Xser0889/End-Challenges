@@ -1,0 +1,353 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+header {
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+h1 {
+    margin: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.game-description {
+    margin-bottom: 2rem;
+}
+.game-area {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.question-container {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+.answer-input {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: 150px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+.submit-answer {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+.submit-answer:hover {
+    background-color: #b3332a;
+}
+.start-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.start-button:hover {
+    background-color: #b3332a;
+}
+.progress-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+.progress-item {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: #ddd;
+}
+.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+.incorrect {
+    background-color: #f44336;
+    color: white;
+}
+.home-link {
+    display: block;
+    margin-top: 2rem;
+    color: #4a6fa5;
+    text-decoration: none;
+    font-weight: bold;
+}
+.home-link:hover {
+    text-decoration: underline;
+}
+.skip-button {
+    background-color: #999;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+.skip-button:hover {
+    background-color: #777;
+}
+.result-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+.result-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.result-score {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #f44336;
+}
+.retry-button {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.retry-button:hover {
+    background-color: #3a5985;
+}
+.badge-award-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.badge-award-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge-icon-large {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 102;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    animation: pulsate 2s infinite ease-in-out;
+    position: relative;
+}
+
+/* Add glowing circle effect */
+.badge-icon-large::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: transparent;
+    border: 5px solid rgba(255, 215, 0, 0.5);
+    animation: pulseGlow 2s infinite ease-in-out alternate;
+}
+
+.badge-icon-large img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+@keyframes pulsate {
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 255, 255, 0.9); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.badge-title {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Updated continue button with pop animation */
+.continue-btn {
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    transition: all 0.3s;
+    animation: popButton 0.5s ease-out 0.5s both;
+}
+
+@keyframes popButton {
+    0% { transform: translateX(-50%) scale(0); }
+    50% { transform: translateX(-50%) scale(1.2); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+.continue-btn:hover {
+    background-color: #ffed4a;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    transform: translateX(-50%) scale(1.05);
+}
+.feedback {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    min-height: 40px; 
+    display: block;
+    line-height: 3; 
+}
+.feedback.correct {
+    color: #ffffff;
+}
+.feedback.incorrect {
+    color: #ffffff;
+}
+
+.message-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.message-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+    max-width: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s ease-out;
+    position: relative;
+}
+
+.message-overlay.active .message-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.win-message .message-content {
+    border: 4px solid #f44336;
+}
+
+.message-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f44336;
+}
+
+.message-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-popup {
+    animation: slideIn 0.6s ease-out forwards;
+}

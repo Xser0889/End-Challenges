@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Arts Challenge</title>
+    <link rel="stylesheet" href="../Style/styleLa.css">
+</head>
+<body>
+    <header>
+        <h1>Language Arts Challenge</h1>
+    </header>
+    
+    <div class="container">
+        <div class="game-description">
+            <h2>Complete Langague Arts Challenge!</h2>
+            <p>Read the paragraph and find the 5 words with grammar errors. Click on each word you think has an error.</p>
+        </div>
+        
+        <div class="game-area">
+            <div class="game-header">
+                <div class="level-indicator">Level <span id="current-level">1</span> of 3</div>
+            </div>
+            
+            <!-- Moved lives indicator below the level indicator -->
+            <div class="lives" style="margin-bottom: 1rem; text-align: center;">
+                Lives: 
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+            </div>
+            
+            <div class="progress-container">
+                <span class="error-counter">Errors found: <span id="errors-found">0</span>/5</span>
+            </div>
+            
+            <div class="paragraph-container" id="paragraph-container">
+                <!-- Paragraph content will be loaded here -->
+            </div>
+            
+            <button id="next-level-btn" class="complete-button">Next Level</button>
+            <button id="retry-btn" class="complete-button">Try Again</button>
+            
+            <div class="success-message" id="success-message">
+                <h3>Congratulations!</h3>
+                <p>You've completed Level <span id="completed-level">1</span>.</p>
+            </div>
+        </div>
+        
+        <a href="../index.html" class="home-link">Return to Home</a>
+    </div>
+    
+    <!-- Message overlay -->
+    <div class="message-overlay win-message" id="winMessage">
+        <div class="message-content">
+            <h2>📖 Congratulations! 📖</h2>
+            <p>You've mastered all levels of the Language Arts Challenge! You have unlocked the Language Arts Master badge!</p>
+            <button id="playAgain" class="complete-button">Done</button>
+        </div>
+    </div>
+    
+    <!-- Badge Award Overlay -->
+    <div class="badge-award-overlay" id="badgeAwardOverlay">
+        <div class="badge-award-container">
+            <div class="badge-icon-large">
+                <img src="../Images/Bagdes/LA Badge.png" alt="Language Arts Master Badge">
+            </div>
+            <div class="badge-title">Language Arts Master</div>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </div>
+    </div>
+    
+    <script src="../Script/scriptLA.js"></script>
+</body>
+</html>

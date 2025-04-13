@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clover Says</title>
+    <link rel="stylesheet" href="../Style/styleclover.css">
+</head>
+<body>
+    <header>
+        <h1>Clover Says Challenge</h1>
+    </header>
+    
+    <div class="container">
+        <div class="game-description">
+            <h2>Complete Clover Says challenge!</h2>
+            <p>Watch the pattern of flashing clovers and repeat it. Complete all 8 levels to earn the Clover Master badge!</p>
+        </div>
+        
+        <div class="game-area">
+            <div class="score-container">
+                <div class="score">Level: <span id="level">1</span>/8</div>
+            </div>
+            
+            <div class="game-container">
+                <div class="clover blue" id="blue"></div>
+                <div class="clover red" id="red"></div>
+                <div class="clover yellow" id="yellow"></div>
+                <div class="clover green" id="green"></div>
+            </div>
+            
+            <div class="controls">
+                <button id="start">Start Game</button>
+                <button id="reset">Reset Game</button>
+            </div>
+        </div>
+        
+        <a href="../index.html" class="home-link">Return to Home</a>
+    </div>
+    
+    <!-- Message overlays with added close button -->
+    <div class="message-overlay win-message" id="winMessage">
+        <div class="message-content">
+            <button class="close-btn" id="closeWinBtn">✕</button>
+            <h2>🍀 Congratulations! 🍀</h2>
+            <p>You completed all 10 levels! You have unlocked the Clover Master badge!</p>
+            <button id="playAgain">Play Again</button>
+        </div>
+    </div>
+    
+    <div class="message-overlay lose-message" id="loseMessage">
+        <div class="message-content">
+            <button class="close-btn" id="closeLoseBtn">✕</button>
+            <h2>Game Over</h2>
+            <p>You reached level <span id="finalLevel">0</span>. Try again for the luck of the clover!</p>
+            <button id="tryAgain">Try Again</button>
+        </div>
+    </div>
+    
+    <!-- Badge Award Overlay with Modified Animation (Removed Rays) -->
+    <div class="badge-award-overlay" id="badgeAwardOverlay">
+        <div class="badge-award-container">
+            <div class="badge-icon-large">
+                <img src="../Images/Bagdes/Clover badge.png" alt="Clover Say Master Badge">
+            </div>
+            <div class="badge-title">Clover Say Master</div>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="../Script/scriptclover.js"></script>
+</body>
+</html>

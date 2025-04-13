@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Challenge</title>
+    <link rel="stylesheet" href="../Style/stylereading.css">
+</head>
+<body>
+    <header>
+        <h1>Reading Challenge</h1>
+    </header>
+    
+    <div class="container">
+        <div class="game-description">
+            <h2>Complete Reading Challenge!</h2>
+            <p>Read the paragraph carefully and answer the questions correctly to get the Reading Master Badge. You have 3 lives for each level!</p>
+        </div>
+        
+        <div class="game-area">
+            <div class="game-header">
+                <div class="level-indicator">Level <span id="current-level">1</span> of 2</div>
+            </div>
+            
+            <!-- Lives indicator -->
+            <div class="lives" style="margin-bottom: 1rem; text-align: center;">
+                Lives: 
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+            </div>
+            
+            <div class="progress-container">
+                <span class="error-counter">Questions correct: <span id="questions-correct">0</span>/6</span>
+            </div>
+            
+            <!-- Reading content container -->
+            <div class="paragraph-container" id="paragraph-container">
+                <!-- Story content will be loaded here -->
+            </div>
+            
+            <!-- Question container -->
+            <div class="question-container" id="question-container">
+                <!-- Questions will be loaded here -->
+            </div>
+            
+            <button id="next-level-btn" class="complete-button">Next Level</button>
+            <button id="retry-btn" class="complete-button">Try Again</button>
+            
+            <div id="success-message" class="success-message">
+                <h3>Congratulations!</h3>
+                <p>You've completed Level <span id="completed-level">1</span>!</p>
+            </div>
+        </div>
+        
+        <a href="../index.html" class="home-link">Return to Home</a>
+    </div>
+    
+    <!-- Message overlay -->
+    <div class="message-overlay win-message" id="winMessage">
+        <div class="message-content">
+            <h2>📚 Congratulations! 📚</h2>
+            <p>You've mastered the Reading Challenge! You have unlocked the Reading Master badge!</p>
+            <button id="playAgain" class="complete-button">Done</button>
+        </div>
+    </div>
+    
+    <!-- Badge Award Overlay -->
+    <div class="badge-award-overlay" id="badgeAwardOverlay">
+        <div class="badge-award-container">
+            <div class="badge-icon-large">
+                <img src="../Images/Bagdes/Reading Badge.png" alt="Reading Master Badge">
+            </div>
+            <div class="badge-title">Reading Master</div>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </div>
+    </div>
+
+    <script src="../Script/scriptReading.js"></script>
+</body>
+</html>

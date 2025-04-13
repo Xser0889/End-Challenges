@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Shelf Challenge</title>
+    <link rel="stylesheet" href="../Style/stylepuzzle.css">
+</head>
+<body>
+    <header>
+        <h1>Memory Shelf Challenge</h1>
+    </header>
+    
+    <div class="container">
+        <div class="game-description">
+            <h2>Complete Memory Shelf Challenge!</h2>
+            <p>Memorize the positions of the items on the shelves. After a few seconds, items will fall off. 
+               Replace them in their correct positions to earn points!</p>
+        </div>
+        
+        <div class="game-area">
+            <div class="game-header">
+                <div class="level-indicator">Level <span id="current-level">1</span> of 3</div>
+                
+                <div class="timer-container">
+                    <span id="timer-label">Memorize: </span>
+                    <span id="timer">0</span>s
+                </div>
+                
+                <div class="lives">
+                    Lives: 
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <span class="score-counter">Score: <span id="current-score">0</span>/<span id="max-score">10</span></span>
+            </div>
+            
+            <div class="game-message" id="game-message">
+                <p>Memorize the positions of all items!</p>
+            </div>
+            
+            <div class="shelves-container">
+                <div class="shelf" id="top-shelf">
+                    <div class="shelf-slot" data-position="0"></div>
+                    <div class="shelf-slot" data-position="1"></div>
+                    <div class="shelf-slot" data-position="2"></div>
+                    <div class="shelf-slot" data-position="3"></div>
+                    <div class="shelf-slot" data-position="4"></div>
+                </div>
+                <div class="shelf-divider"></div>
+                <div class="shelf" id="bottom-shelf">
+                    <div class="shelf-slot" data-position="5"></div>
+                    <div class="shelf-slot" data-position="6"></div>
+                    <div class="shelf-slot" data-position="7"></div>
+                    <div class="shelf-slot" data-position="8"></div>
+                    <div class="shelf-slot" data-position="9"></div>
+                </div>
+            </div>
+            
+            <div class="items-tray" id="items-tray">
+                <!-- Item buttons will be generated here -->
+            </div>
+            
+            <div class="game-controls">
+                <button id="check-button" class="game-button">Check Placement</button>
+                <button id="start-button" class="game-button">Start Game</button>
+                <button id="next-level-btn" class="game-button">Next Level</button>
+                <button id="retry-btn" class="game-button">Try Again</button>
+            </div>
+            
+            <div class="success-message" id="success-message">
+                <h3>Congratulations!</h3>
+                <p>You've completed Level <span id="completed-level">1</span>!</p>
+                <p>Score: <span id="level-score">0</span>/<span id="level-max-score">10</span></p>
+            </div>
+        </div>
+        
+        <a href="../index.html" class="home-link">Return to Home</a>
+    </div>
+    
+    <!-- Message overlay -->
+    <div class="message-overlay win-message" id="winMessage">
+        <div class="message-content">
+            <h2>🏆 Congratulations! 🏆</h2>
+            <p>You've mastered the Memory Shelf Challenge! You have unlocked the Memory Master badge!</p>
+            <button id="playAgain" class="game-button">Done</button>
+        </div>
+    </div>
+    
+    <!-- Badge Award Overlay -->
+    <div class="badge-award-overlay" id="badgeAwardOverlay">
+        <div class="badge-award-container">
+            <div class="badge-icon-large">
+                <img src="../Images/Bagdes/Memory badge.png" alt="Memory Master Badge">
+            </div>
+            <div class="badge-title">Memory Shelf Master</div>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </div>
+    </div>
+    
+    <script src="../Script/scriptpuzzle.js"></script>
+</body>
+</html>

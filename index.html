@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End Challenges</title>
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+<body>
+    <header>
+        <h1>End Challenges</h1>
+        <div id="welcome-message" class="welcome-message">
+            Welcome, <span id="username-display">Player</span>!
+        </div>
+        <p>Complete mini-games to collect all badges!</p>
+    </header>
+    
+    <!-- Badge Button -->
+    <button id="badge-button" class="badge-button">
+        <div class="badge-button-icon">🏆</div>
+        Badges
+    </button>
+
+    <!-- Leaderboard Button -->
+    <button id="leaderboard-button" class="leaderboard-button">
+        <div class="leaderboard-button-icon">🏆</div>
+        Leaderboard
+    </button>
+
+    <!-- Circular Progress Indicator -->
+    <div class="circular-progress-container">
+        <div class="circular-progress">
+            <svg viewBox="0 0 100 100" class="progress-ring">
+                <circle class="progress-ring-circle-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="progress-ring-circle" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="progress-text">
+                <span id="circular-count">0</span>/6
+            </div>
+        </div>
+    </div>
+    
+    <!-- Badge Slide Panel -->
+    <div id="badge-panel" class="badge-panel">
+        <div class="badge-panel-header">
+            <h2>Your Badges</h2>
+            <button id="close-panel" class="close-panel">×</button>
+        </div>
+        
+        <div class="badge-counter">
+            <div id="badge-count">Badges Collected: <span id="collected-count">0</span>/6</div>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+        
+        <div id="panel-math-badge" class="panel-badge">
+            <div class="panel-badge-icon">
+                <img src="Images/Bagdes/Math Badge.png" alt="Math Master Badge">
+            </div>
+            <div class="panel-badge-info">
+                <div class="panel-badge-name">Math Master</div>
+                <div class="panel-badge-status">Locked</div>
+            </div>
+        </div>
+        
+        <div id="panel-language-arts-badge" class="panel-badge">
+            <div class="panel-badge-icon">
+                <img src="Images/Bagdes/LA Badge.png" alt="Language Art Master Badge">
+            </div>
+            <div class="panel-badge-info">
+                <div class="panel-badge-name">Language Art Master</div>
+                <div class="panel-badge-status">Locked</div>
+            </div>
+        </div>
+        
+        <div id="panel-reading-badge" class="panel-badge">
+            <div class="panel-badge-icon">
+                <img src="Images/Bagdes/Reading Badge.png" alt="Reading Master Badge">
+            </div>
+            <div class="panel-badge-info">
+                <div class="panel-badge-name">Reading Master</div>
+                <div class="panel-badge-status">Locked</div>
+            </div>
+        </div>
+        
+        <div id="panel-Spanish-badge" class="panel-badge">
+            <div class="panel-badge-icon">
+                <img src="Images/Bagdes/Spanish Badge.png" alt="Spanish Master Badge">
+            </div>
+            <div class="panel-badge-info">
+                <div class="panel-badge-name">Spanish Master</div>
+                <div class="panel-badge-status">Locked</div>
+            </div>
+        </div>
+        
+        <div id="panel-Clover-says-badge" class="panel-badge">
+            <div class="panel-badge-icon">
+                <img src="Images/Bagdes/Clover Badge.png" alt="Clover Say Master Badge">
+            </div>
+            <div class="panel-badge-info">
+                <div class="panel-badge-name">Clover Says Master</div>
+                <div class="panel-badge-status">Locked</div>
+            </div>
+        </div>
+
+        <div id="panel-puzzle-badge" class="panel-badge">
+            <div class="panel-badge-icon">
+                <img src="Images/Bagdes/Memory badge.png" alt="Puzzle Master Badge">
+            </div>
+            <div class="panel-badge-info">
+                <div class="panel-badge-name">Memory Shelf Master</div>
+                <div class="panel-badge-status">Locked</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leaderboard Panel -->
+    <div id="leaderboard-panel" class="leaderboard-panel">
+        <div class="leaderboard-panel-header">
+            <h2>Leaderboard</h2>
+            <button id="refresh-leaderboard" class="refresh-button">🔄</button>
+            <button id="close-leaderboard" class="close-panel">×</button>
+        </div>
+        
+        <div class="leaderboard-content">
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Badges</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-data">
+                    <!-- Leaderboard data will be inserted here -->
+                    <tr class="loading-row">
+                        <td colspan="3">Loading leaderboard data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Dark Overlay -->
+    <div id="overlay" class="overlay"></div>
+    
+    <div class="container">
+        <div class="games-section">
+            <h2>Available Mini-Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">
+                        <img src="Images/Thumbnail/Thumbnail Math.png" alt="Math Challenge">
+                    </div>
+                    <h3 class="game-title">Math Challenge</h3>
+                    <a href="Games/Math.html" class="play-button">Play Now</a>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">
+                        <img src="Images/Thumbnail/Thumbnail LA.png" alt="Languaje Art Challenge">
+                    </div>
+                    <h3 class="game-title">Language Art Challenge</h3>
+                    <a href="Games/La.html" class="play-button">Play Now</a>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">
+                        <img src="Images/Thumbnail/Thumbnail Reading.png" alt="Reading Challenge">
+                    </div>
+                    <h3 class="game-title">Reading Challenge</h3>
+                    <a href="Games/Reading.html" class="play-button">Play Now</a>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">
+                        <img src="Images/Thumbnail/Thumbnail Spanish.png" alt="Spanish Challenge">
+                    </div>
+                    <h3 class="game-title">Spanish Challenge</h3>
+                    <a href="Games/Spanish.html" class="play-button">Play Now</a>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">
+                        <img src="Images/Thumbnail/Thumbnail Clover.png" alt="Clover Say">
+                    </div>
+                    <h3 class="game-title">Clover Say Challenge</h3>
+                    <a href="Games/Clover-says.html" class="play-button">Play Now</a>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <img src="Images/Thumbnail/Thumbnail memory shelf.png" alt="Puzzle">
+                    </div>
+                    <h3 class="game-title">Memory Shelf Challenge</h3>
+                    <a href="Games/MemoryShelf.html" class="play-button">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Complete Collection Award Overlay -->
+    <div class="complete-collection-overlay" id="completeCollectionOverlay">
+        <div class="message-content">
+            <h2>🏆 Congratulations! 🏆</h2>
+            <p>You've collected all 6 badges and completed the End Challenges!</p>
+            <div class="all-badges-display">
+                <div class="collection-badge">
+                    <img src="Images/Bagdes/Math Badge.png" alt="Math Master Badge">
+                </div>
+                <div class="collection-badge">
+                    <img src="Images/Bagdes/LA Badge.png" alt="Language Art Master Badge">
+                </div>
+                <div class="collection-badge">
+                    <img src="Images/Bagdes/Reading Badge.png" alt="Reading Master Badge">
+                </div>
+                <div class="collection-badge">
+                    <img src="Images/Bagdes/Spanish Badge.png" alt="Spanish Master Badge">
+                </div>
+                <div class="collection-badge">
+                    <img src="Images/Bagdes/Clover Badge.png" alt="Clover Says Master Badge">
+                </div>
+                <div class="collection-badge">
+                    <img src="Images/Bagdes/Memory badge.png" alt="Puzzle Master Badge">
+                </div>
+            </div>
+            <button id="closeCompletionBtn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Username Prompt Modal -->
+    <div id="username-modal" class="username-modal">
+        <div class="username-modal-content">
+            <h2>Welcome to End Challenges!</h2>
+            <p>Please enter your username to get started:</p>
+            <form id="username-form">
+                <input type="text" id="username-input" placeholder="Enter username" required>
+                <button type="submit" id="username-submit">Start Playing</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Script/scriptindex.js"></script>
+</body>
+</html>

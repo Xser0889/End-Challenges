@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = ['blue', 'red', 'yellow', 'green'];
     let gameSequence = [];
     let playerSequence = [];
-    let level = 0;
+    let level = 1;
     let isPlaying = false;
-    const WIN_LEVEL = 8; 
+    const WIN_LEVEL = 7; 
     
     // Add click event to each clover
     Object.keys(clovers).forEach(color => {
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isPlaying = true;
         gameSequence = [];
         playerSequence = [];
-        level = 0;
+        level = 1;
         levelDisplay.textContent = level;
         addToSequence();
         startButton.disabled = true;
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isPlaying = false;
         gameSequence = [];
         playerSequence = [];
-        level = 0;
+        level = 1;
         levelDisplay.textContent = level;
         startButton.disabled = false;
     }

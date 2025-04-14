@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isPlaying = true;
         gameSequence = [];
         playerSequence = [];
-        level = 1;
+        level = 0;
         levelDisplay.textContent = level;
         addToSequence();
         startButton.disabled = true;

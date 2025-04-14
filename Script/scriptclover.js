@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isPlaying = false;
         gameSequence = [];
         playerSequence = [];
-        level = 1;
+        level = 0;
         levelDisplay.textContent = level;
         startButton.disabled = false;
     }

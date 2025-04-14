@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = ['blue', 'red', 'yellow', 'green'];
     let gameSequence = [];
     let playerSequence = [];
-    let level = 1;
+    let level = 0;
     let isPlaying = false;
     const WIN_LEVEL = 8; 
     
